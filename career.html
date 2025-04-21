@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPORTify - Career Opportunities</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <img src="img/logo.png" alt="SPORTify">
+                <span>SPORTify</span>
+            </div>
+            <div class="nav-right">
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="sports.html">Sports</a>
+                    <a href="news.html">News</a>
+                    <li class="profile-icon">
+                        <a href="login.html" id="profileLink">
+                            <i class="fas fa-user"></i>
+                        </a>
+                    </li>
+                </div>
+            </div>
+            
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="mobile-menu">
+            <div class="mobile-menu-content">
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="sports.html">Sports</a>
+                    <a href="news.html">News</a>
+                    <li class="profile-icon">
+                        <a href="login.html" id="mobileProfileLink">
+                            <i class="fas fa-user"></i>
+                            <span>Login</span>
+                        </a>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Search Section -->
+    <main class="search-page">
+        <div class="search-hero">
+            <h1>Find Your Dream Career in Sports</h1>
+            <div class="main-search">
+                <input type="text" id="careerSearch" placeholder="Search for career opportunities...">
+                <button type="button"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+
+        <!-- Career Categories Section -->
+        <section class="categories">
+            <h2>Career Categories</h2>
+            <div class="category-grid">
+                <div class="category-card" data-category="athletic">
+                    <i class="fas fa-running"></i>
+                    <h3>Athletic Performance</h3>
+                </div>
+                <div class="category-card" data-category="medical">
+                    <i class="fas fa-heartbeat"></i>
+                    <h3>Sports Medicine</h3>
+                </div>
+                <div class="category-card" data-category="business">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Sports Management</h3>
+                </div>
+                <div class="category-card" data-category="media">
+                    <i class="fas fa-microphone"></i>
+                    <h3>Sports Media</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Career Results Section -->
+        <section class="career-results">
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">All Careers</button>
+                <button class="filter-btn" data-filter="athletic">Athletic</button>
+                <button class="filter-btn" data-filter="medical">Medical</button>
+                <button class="filter-btn" data-filter="business">Business</button>
+                <button class="filter-btn" data-filter="media">Media</button>
+            </div>
+
+            <div class="career-grid">
+                 <!-- Sports Management -->
+                 <div class="career-card" data-category="business" onclick="window.location.href='career-detail.html?id=manager'">
+                    <div class="career-image">
+                        <img src="img/manager.jpg" alt="Team Manager">
+                    </div>
+                    <div class="career-info">
+                        <h3>Team Manager</h3>
+                        <ul class="requirements-list">
+                            <li>Sports Management Degree</li>
+                            <li>Leadership Skills</li>
+                            <li>Budget Management</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="career-card" data-category="business" onclick="window.location.href='career-detail.html?id=agent'">
+                    <div class="career-image">
+                        <img src="img/agent.jpg" alt="Sports Agent">
+                    </div>
+                    <div class="career-info">
+                        <h3>Sports Agent</h3>
+                        <ul class="requirements-list">
+                            <li>Law/Business Degree</li>
+                            <li>Negotiation Skills</li>
+                            <li>Network Building</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="career-card" data-category="business" onclick="window.location.href='career-detail.html?id=analyst'">
+                    <div class="career-image">
+                        <img src="img/analyst.jpg" alt="Sports Analyst">
+                    </div>
+                    <div class="career-info">
+                        <h3>Sports Analyst</h3>
+                        <ul class="requirements-list">
+                            <li>Statistics Degree</li>
+                            <li>Data Analysis Skills</li>
+                            <li>Sports Knowledge</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="career-card" data-category="business" onclick="window.location.href='career-detail.html?id=marketer'">
+                    <div class="career-image">
+                        <img src="img/marketer1.jpg" alt="Sports Marketer">
+                    </div>
+                    <div class="career-info">
+                        <h3>Sports Marketer</h3>
+                        <ul class="requirements-list">
+                            <li>Marketing Degree</li>
+                            <li>Advertising Skills</li>
+                            <li>Brand Management</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="career-card" data-category="business" onclick="window.location.href='career-detail.html?id=lawyer'">
+                    <div class="career-image">
+                        <img src="img/lawyer.jpg" alt="Sports Lawyer">
+                    </div>
+                    <div class="career-info">
+                        <h3>Sports Lawyer</h3>
+                        <ul class="requirements-list">
+                            <li>Law Degree</li>
+                            <li>Legal Experience</li>
+                            <li>Contract Negotiation</li>
+                        </ul>
+                    </div>
+                </div>  
+
+                <div class="career-card" data-category="business" onclick="window.location.href='career-detail.html?id=finance'">
+                    <div class="career-image">
+                        <img src="img/finance-banner.webp" alt="Sports Finance Manager">
+                    </div>
+                    <div class="career-info">
+                        <h3>Sports Finance Manager</h3>
+                        <ul class="requirements-list">
+                            <li>Finance Degree</li>
+                            <li>Accounting Skills</li>
+                            <li>Budget Management</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="career-card" data-category="business" onclick="window.location.href='career-detail.html?id=hr'">
+                    <div class="career-image">
+                        <img src="img/hr.webp" alt="Sports HR Manager">
+                    </div>
+                    <div class="career-info">
+                        <h3>Sports HR Manager</h3>
+                        <ul class="requirements-list">
+                            <li>HR Degree</li>
+                            <li>Recruitment Skills</li>
+                            <li>Employee Relations</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Athletic Performance -->
+                <div class="career-card" data-category="athletic" onclick="window.location.href='career-detail.html?id=coach'">
+                    <div class="career-image">
+                        <img src="img/coach-banner.jpg" alt="Sports Coach">
+                    </div>
+                    <div class="career-info">
+                        <h3>Sports Coach</h3>
+                        <ul class="requirements-list">
+                            <li>Bachelor's degree in Sports Science</li>
+                            <li>Coaching certifications</li>
+                            <li>Leadership skills</li>
+                            <li>Experience in specific sports</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="career-card" data-category="athletic" onclick="window.location.href='career-detail.html?id=trainer'">
+                    <div class="career-image">
+                        <img src="img/trainer.jpg" alt="Fitness Trainer">
+                    </div>
+                    <div class="career-info">
+                        <h3>Fitness Trainer</h3>
+                        <ul class="requirements-list">
+                            <li>Fitness Certification</li>
+                            <li>First Aid Training</li>
+                            <li>Client Management</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="career-card" data-category="athletic" onclick="window.location.href='career-detail.html?id=referee'">
+                    <div class="career-image">
+                        <img src="img/refree.jpg" alt="Sports Referee">
+                    </div>
+                    <div class="career-info">
+                        <h3>Sports Referee</h3>
+                        <ul class="requirements-list">
+                            <li>Referee Certification</li>
+                            <li>Knowledge of Rules</li>
+                            <li>Decision Making Skills</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="career-card" data-category="athletic" onclick="window.location.href='career-detail.html?id=athlete'">
+                    <div class="career-image">
+                        <img src="img/ath-banner.jpg" alt="Professional Athlete">
+                    </div>
+                    <div class="career-info">
+                        <h3>Professional Athlete</h3>
+                        <ul class="requirements-list">
+                            <li>Training Experience</li>
+                            <li>Competition Skills</li>
+                            <li>Physical Fitness</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Sports Medicine -->
+                <div class="career-card" data-category="medical" onclick="window.location.href='career-detail.html?id=physio'">
+                    <div class="career-image">
+                        <img src="img/physio.jpg" alt="Physiotherapist">
+                    </div>
+                    <div class="career-info">
+                        <h3>Sports Physiotherapist</h3>
+                        <ul class="requirements-list">
+                            <li>Physiotherapy Degree</li>
+                            <li>Sports Medicine Certification</li>
+                            <li>Clinical Experience</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="career-card" data-category="medical" onclick="window.location.href='career-detail.html?id=nutritionist'">
+                    <div class="career-image">
+                        <img src="img/nutritionist.webp" alt="Sports Nutritionist">
+                    </div>
+                    <div class="career-info">
+                        <h3>Sports Nutritionist</h3>
+                        <ul class="requirements-list">
+                            <li>Nutrition Degree</li>
+                            <li>Sports Nutrition Certification</li>
+                            <li>Diet Planning Experience</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="career-card" data-category="medical" onclick="window.location.href='career-detail.html?id=doctor'">
+                    <div class="career-image">
+                        <img src="img/doctor.jpg" alt="Sports Doctor">
+                    </div>
+                    <div class="career-info">
+                        <h3>Sports Doctor</h3>
+                        <ul class="requirements-list">
+                            <li>Medical Degree</li>
+                            <li>Sports Medicine Certification</li>
+                            <li>Emergency Care Skills</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class = "career-card" data-category="medical" onclick="window.location.href='career-detail.html?id=psychologist'">
+                    <div class="career-image">
+                        <img src="img/psychologist.webp" alt="Sports Psychologist">
+                    </div>
+                    <div class="career-info">
+                        <h3>Sports Psychologist</h3>
+                        <ul class="requirements-list">
+                            <li>Psychology Degree</li>
+                            <li>Sports Psychology Certification</li>
+                            <li>Counseling Skills</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="career-card" data-category="medical" onclick="window.location.href='career-detail.html?id=chiropractor'">
+                    <div class="career-image">
+                        <img src="img/chiropractor-banner.jpeg" alt="Sports Chiropractor">
+                    </div>
+                    <div class="career-info">
+                        <h3>Sports Chiropractor</h3>
+                        <ul class="requirements-list">
+                            <li>Chiropractic Degree</li>
+                            <li>Chiropractic License</li>
+                            <li>Manual Therapy Skills</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Sports Media -->
+                <div class="career-card" data-category="media" onclick="window.location.href='career-detail.html?id=journalist'">
+                    <div class="career-image">
+                        <img src="img/journalist.jpg" alt="Sports Journalist">
+                    </div>
+                    <div class="career-info">
+                        <h3>Sports Journalist</h3>
+                        <ul class="requirements-list">
+                            <li>Journalism Degree</li>
+                            <li>Writing Skills</li>
+                            <li>Sports Knowledge</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="career-card" data-category="media" onclick="window.location.href='career-detail.html?id=broadcaster'">
+                    <div class="career-image">
+                        <img src="img/broadcaster.jpg" alt="Sports Broadcaster">
+                    </div>
+                    <div class="career-info">
+                        <h3>Sports Broadcaster</h3>
+                        <ul class="requirements-list">
+                            <li>Broadcasting Degree</li>
+                            <li>Public Speaking</li>
+                            <li>Technical Knowledge</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="career-card" data-category="media" onclick="window.location.href='career-detail.html?id=photographer'">
+                    <div class="career-image">
+                        <img src="img/photographer.webp" alt="Sports Photographer">
+                    </div>
+                    <div class="career-info">
+                        <h3>Sports Photographer</h3>
+                        <ul class="requirements-list">
+                            <li>Photography Degree</li>
+                            <li>Camera Skills</li>
+                            <li>Editing Experience</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="career-card" data-category="media" onclick="window.location.href='career-detail.html?id=editor'">
+                    <div class="career-image">
+                        <img src="img/editor.jpg" alt="Sports Editor">
+                    </div>
+                    <div class="career-info">
+                        <h3>Sports Editor</h3>
+                        <ul class="requirements-list">
+                            <li>Editing Degree</li>
+                            <li>Writing Skills</li>
+                            <li>Content Management</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="career-card" data-category="media" onclick="window.location.href='career-detail.html?id=producer'">
+                    <div class="career-image">
+                        <img src="img/producer.webp" alt="Sports Producer">
+                    </div>
+                    <div class="career-info">
+                        <h3>Sports Producer</h3>
+                        <ul class="requirements-list">
+                            <li>Production Degree</li>
+                            <li>Project Management</li>
+                            <li>Content Creation</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About SPORTify</h3>
+                <p>Your ultimate destination for sports news, career information and sports detail</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sports.html">Sports</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="career.html">Career</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Popular Sports</h3>
+                <ul>
+                    <li><a href="sport-detail.html?sport=cricket">Cricket</a></li>
+                    <li><a href="sport-detail.html?sport=football">Football</a></li>
+                    <li><a href="sport-detail.html?sport=basketball">Basketball</a></li>
+                    <li><a href="sport-detail.html?sport=tennis">Tennis</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 SPORTify. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="career.js"></script>
+</body>
+</html> 

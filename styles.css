@@ -1,0 +1,2429 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.3;
+    color: #333;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo img {
+    height: 30px;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* Navigation Styles */
+
+nav {
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    width: 100%;
+    top: 0;
+    margin: 0 auto;
+    padding: 0.01rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    z-index: 1000;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #1DB954;
+    background-color: rgba(29, 185, 84, 0.1);
+}
+
+.nav-links a.active {
+    color: #1DB954;
+    background-color: rgba(29, 185, 84, 0.1);
+}
+
+/* Remove the underline animation styles */
+.nav-links a::after {
+    display: none;
+}
+
+/* Mobile Navigation Links */
+.mobile-menu .nav-links {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 0;
+}
+
+.mobile-menu .nav-links a {
+    width: 100%;
+    text-align: center;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+}
+
+.mobile-menu .nav-links a:hover {
+    background: #f8f9fa;
+    transform: translateX(5px);
+}
+
+.mobile-menu .nav-links a::after {
+    display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .nav-links {
+        gap: 1.5rem;
+    }
+    
+    .nav-links a {
+        padding: 6px 12px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-links {
+        gap: 1rem;
+    }
+    
+    .nav-links a {
+        padding: 4px 10px;
+        font-size: 0.9rem;
+    }
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 0.25rem;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 0.5rem;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #333;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile Menu Styles */
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: white;
+    padding: 80px 2rem 2rem;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+    overflow-y: auto;
+}
+
+.mobile-menu.active {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-menu .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.mobile-menu .nav-links .login-link {
+    color: #1DB954;
+    font-weight: 600;
+}
+
+.mobile-menu .nav-right {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* Hero Section of Home Page */
+.ihero {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+}
+
+.carousel {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ihero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.ihero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: left;
+    max-width: 800px;
+}
+
+.ihero-content p {
+    font-size: 1vrem;
+    text-align: left;
+    max-width: 600px;
+    opacity: 0.9;
+}
+
+/* Popular Sports Section */
+.popular-sports {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.sports-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sport-card {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.sport-card:hover {
+    transform: translateY(-2px);
+}
+
+/* Footer Styles */
+.footer {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 4rem 0 0;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.footer-section h3 {
+    color: #fff;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #1DB954;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    color: #fff;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #1DB954;
+}
+
+.footer-bottom {
+    margin-top: 3rem;
+    padding: 1.5rem 0;
+    text-align: center;
+    border-top: 1px solid #333;
+}
+
+.footer-bottom p {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* Media Queries */
+.desktop-only {
+    display: flex;
+}
+
+.mobile-login {
+    display: none;
+}
+
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: white;
+    padding: 80px 2rem 2rem;
+    z-index: 1000;
+}
+
+.mobile-menu-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.mobile-menu .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.mobile-menu-footer {
+    display: none;
+}
+
+.mobile-menu .login-btn {
+    width: 100%;
+    max-width: 200px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 0.5rem;
+    }
+
+    .nav-right .nav-links {
+        display: none;
+    }
+
+    .desktop-only {
+        display: none !important;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .mobile-menu.active {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .mobile-menu .nav-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .mobile-menu .nav-links a {
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
+        width: 100%;
+        text-align: center;
+        border-radius: 8px;
+        transition: background-color 0.3s;
+    }
+
+    .mobile-menu .nav-links a:hover {
+        background-color: #f5f5f5;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .logo img {
+        height: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .mobile-menu {
+        padding: 70px 1rem 1rem;
+    }
+
+    .mobile-menu .nav-links {
+        gap: 1.5rem;
+    }
+
+    .mobile-menu .nav-links a {
+        font-size: 1.1rem;
+    }
+
+    .logo span {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .logo span {
+        display: none;
+    }
+
+    .search-container.mobile-search.active input {
+        width: 80px;
+    }
+
+    .login-btn {
+        padding: 0.4rem 0.6rem;
+    }
+}
+
+
+
+
+
+
+/*Sports Section*/
+
+.search-page {
+    padding-top: 0;
+}
+
+.search-hero {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('img/sports-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 4rem 2rem;
+    text-align: center;
+    color: white;
+}
+
+.search-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.main-search {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    gap: 1rem;
+}
+
+.main-search input {
+    flex: 1;
+    padding: 0.9rem 1.5rem;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+}
+
+.main-search button {
+    background: #1DB954;
+    color: white;
+    border: none;
+    padding: 0 2rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.main-search button:hover {
+    background: #1DB954;
+}
+
+/* Categories Section */
+.categories {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.categories h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.category-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+}
+
+.category-card i {
+    font-size: 2.5rem;
+    color: #1DB954;
+    margin-bottom: 1rem;
+}
+
+/* Sports Results Section */
+.sports-results {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.5rem 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.filter-btn.active {
+    background: #1DB954;
+    color: white;
+    border-color: #1DB954;
+}
+
+.sports-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .search-hero {
+        padding: 2rem 1rem;
+    }
+
+    .search-hero h1 {
+        font-size: 1.75rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .main-search {
+        max-width: 100%;
+        flex-direction: row;
+        padding: 0 1rem;
+        position: relative;
+    }
+
+    .main-search input {
+        width: 100%;
+        padding: 0.75rem 3rem 0.75rem 1rem;
+        font-size: 1rem;
+        height: 45px;
+        border: 1px solid #ddd; /* Add border */
+        background: #fff; /* White background */
+    }
+
+    .main-search button {
+        position: absolute;
+        right: 1.25rem;
+        padding: 0;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: transparent; /* Remove blue background */
+    }
+
+    .main-search button:hover {
+        background: transparent; /* Remove blue hover effect */
+    }
+
+    .main-search button i {
+        font-size: 1.1rem;
+        color: #666; /* Gray color for icon */
+    }
+
+    .main-search button i:hover {
+        color: #333; /* Slightly darker gray on hover */
+    }
+
+    .categories {
+        padding: 2rem 1rem;
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .sports-results {
+        padding: 1rem;
+    }
+
+    .filters {
+        gap: 0.5rem;
+    }
+
+    .filter-btn {
+        padding: 0.4rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-hero {
+        padding: 1.5rem 0.75rem;
+    }
+
+    .main-search {
+        padding: 0 0.75rem;
+    }
+
+    .main-search input {
+        height: 40px;
+        font-size: 0.9rem;
+    }
+
+    .main-search button {
+        width: 40px;
+        height: 40px;
+        right: 1rem;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sports-grid {
+        grid-template-columns: 1fr;
+    }
+} 
+
+/*Sports Detail Page*/
+
+.sports-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.sport-card {
+    height: 100%;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.sport-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.sport-card:hover img {
+    transform: scale(1.05);
+}
+
+.sport-card img {
+    transition: transform 0.3s ease;
+}
+
+.sport-image {
+    width: 100%;
+    height: 190px;
+    overflow: hidden;
+}
+
+.sport-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.sport-card:hover .sport-image img {
+    transform: scale(1.1);
+}
+
+.sport-info {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.sport-info h3 {
+    margin: 0 0 1rem;
+    color: #333;
+}
+
+
+@media (max-width: 768px) {
+    .sports-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .sport-image {
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sports-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sport-card {
+        max-width: 100%;
+    }
+} 
+
+
+
+
+
+/*News Section*/
+
+.main {
+    padding-block: 2rem;
+    margin: 0 100px 0;
+}
+
+.cards-container {
+    justify-content: space-between;
+    display:flex;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    align-items: start;
+}
+
+.card {
+    width: 360px;
+    min-height: 370px;
+    box-shadow: 0 0 4px #d4ecff;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: white;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.card:hover{
+    box-shadow: 0 0 4px #d4ecff;
+    background-color: #f9fffa;
+    transform: translateY(-2px);
+}
+
+.card-header {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+}
+
+.card-header img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 12px;
+}
+
+.news-source{
+    margin-block: 12px;
+}
+
+
+
+
+/* Career Page Styles */
+
+.career-hero {
+    height: 500px;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('img/career-bg.jpg') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.career-hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.career-hero p {
+    font-size: 1.5rem;
+    opacity: 0.9;
+}
+
+.career-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.career-main section {
+    margin-bottom: 4rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Career Overview Section */
+.career-overview {
+    background-color: #f8f9fa;
+    padding: 4rem 0;
+}
+
+.section-intro {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 3rem;
+    max-width: 800px;
+}
+
+/* Career Paths Section */
+.career-paths {
+    padding: 4rem 0;
+}
+
+.career-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.career-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+    cursor: pointer;
+    position: relative;
+}
+
+.career-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.career-card:hover .career-image img {
+    transform: scale(1.1);
+}
+
+.career-card:active {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.career-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.career-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.career-info {
+    padding: 1.5rem;
+}
+
+.career-info h3 {
+    color: #333;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.career-card:hover .career-info h3 {
+    color: #1DB954;
+}
+
+.requirements-list {
+    list-style: none;
+    padding: 0;
+}
+
+.requirements-list li {
+    color: #666;
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    font-size: 0.9rem;
+}
+
+.requirements-list li::before {
+    content: "•";
+    color: #1DB954;
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+}
+
+/* Career Categories Section */
+.categories {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.category-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.category-card i {
+    font-size: 2.5rem;
+    color: #1DB954;
+    margin-bottom: 1rem;
+}
+
+.category-card h3 {
+    color: #333;
+    font-size: 1.2rem;
+}
+
+/* Career Results Section */
+.career-results {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.5rem 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn.active {
+    background: #1DB954;
+    color: white;
+    border-color:#1DB954;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .career-hero {
+        height: 400px;
+        padding: 2rem;
+    }
+
+    .career-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .career-hero p {
+        font-size: 1.2rem;
+    }
+
+    .career-main {
+        padding: 1rem;
+    }
+
+    .container {
+        padding: 1rem;
+    }
+
+    .section-intro {
+        font-size: 1.1rem;
+    }
+
+    .career-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .career-image {
+        height: 180px;
+    }
+
+    .career-info {
+        padding: 1rem;
+    }
+
+    .filters {
+        gap: 0.5rem;
+    }
+
+    .filter-btn {
+        padding: 0.4rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .career-hero h1 {
+        font-size: 2rem;
+    }
+
+    .career-hero p {
+        font-size: 1rem;
+    }
+
+    .career-card i {
+        font-size: 2rem;
+    }
+
+    .cta-button {
+        padding: 0.8rem 2rem;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .career-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .career-card {
+        max-width: 100%;
+    }
+}
+
+/* Career Detail Page Styles */
+.career-detail-hero {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                url('img/career-bg.jpg') center/cover;
+    padding: 6rem 0;
+    color: white;
+    text-align: center;
+}
+
+.career-detail-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.career-detail-hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.career-detail-content {
+    padding: 4rem 0;
+}
+
+.career-detail-content section {
+    margin-bottom: 4rem;
+}
+
+.career-detail-content h2 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #1DB954;
+}
+
+/* Roadmap Timeline */
+.roadmap-timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.roadmap-timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 2px;
+    background: #1DB954;
+    transform: translateY(-50%);
+}
+
+.roadmap-step {
+    position: relative;
+    width: 25%;
+    padding: 0 15px;
+    float: left;
+    margin-bottom: 0;
+}
+
+.roadmap-step::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: -36px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #1DB954;
+    border: 3px solid white;
+    box-shadow: 0 0 0 3px rgba(0,136,204,0.2);
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.roadmap-step:last-child {
+    margin-bottom: 0;
+}
+
+.roadmap-step-content {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.roadmap-step-content:hover {
+    transform: translateY(-10px);
+}
+
+.roadmap-step-content h3 {
+    color: #1DB954;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.roadmap-step-content h3 i {
+    font-size: 1.2rem;
+}
+
+.roadmap-step-content p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 0.9rem;
+}
+
+/* Clear the float */
+.roadmap-timeline::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+/* Responsive styles for roadmap */
+@media (max-width: 992px) {
+    .roadmap-step {
+        width: 50%;
+        margin-bottom: 40px;
+    }
+    
+    .roadmap-timeline::before {
+        display: none;
+    }
+    
+    .roadmap-step::before {
+        top: -26px;
+    }
+    
+    .roadmap-step-content {
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    .roadmap-step {
+        width: 100%;
+        margin-bottom: 30px;
+        padding: 0;
+    }
+    
+    .roadmap-step::before {
+        top: -26px;
+    }
+    
+    .roadmap-step-content {
+        margin-top: 40px;
+    }
+    
+    .roadmap-step-content:hover {
+        transform: translateY(-5px);
+    }
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.skill-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.skill-card i {
+    font-size: 2rem;
+    color: #1DB954;
+    margin-bottom: 1rem;
+}
+
+/* Institutes Grid */
+.institutes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.institute-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.institute-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.institute-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.institute-info {
+    padding: 1.5rem;
+}
+
+.institute-info h3 {
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.institute-info p {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.institute-info a {
+    color: #1DB954;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Salary Information */
+.salary-details {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.salary-range {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.salary-item {
+    text-align: center;
+}
+
+.salary-item h3 {
+    color: #1DB954;
+    margin-bottom: 0.5rem;
+}
+
+/* Job Market */
+.market-info {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.market-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    }
+
+    .stat-card {
+    text-align: center;
+        padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.stat-card h3 {
+    color: #1DB954;
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .career-detail-hero {
+        padding: 4rem 0;
+    }
+
+    .career-detail-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .roadmap-timeline {
+        padding-left: 40px;
+    }
+
+    .roadmap-timeline::before {
+        left: 15px;
+    }
+
+    .roadmap-step {
+        padding-left: 1.5rem;
+    }
+
+    .roadmap-step::before {
+        left: -4px;
+        width: 10px;
+        height: 10px;
+    }
+
+    .career-detail-content section {
+        margin-bottom: 3rem;
+    }
+
+    .career-detail-content h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .career-detail-hero h1 {
+        font-size: 2rem;
+    }
+
+    .career-detail-hero p {
+        font-size: 1rem;
+    }
+
+    .roadmap-step-content,
+    .skill-card,
+    .institute-card,
+    .salary-details,
+    .market-info {
+        padding: 1rem;
+    }
+
+    .salary-range {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .market-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .roadmap-timeline {
+        padding-left: 30px;
+    }
+
+    .roadmap-step-content:hover {
+        transform: translateX(5px);
+    }
+}
+
+/* Detail Page Styles (Shared between Sports and Career) */
+.detail-page {
+    padding-top: 0;
+}
+
+.detail-hero {
+    background: #f8f9fa;
+    padding: 4rem 2rem;
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.hero-image {
+    width: 100%;
+    height: 400px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-info {
+    color: #333;
+}
+
+.hero-info h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.category-tag {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: #1DB954;
+    color: white;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.overview {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #666;
+}
+
+.detail-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+/* Quick Stats Section */
+.quick-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.stat-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-card i {
+    font-size: 2.5rem;
+    color: #1DB954;
+    margin-bottom: 1rem;
+}
+
+.stat-card h3 {
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* Detail Sections */
+.detail-section {
+    margin-bottom: 4rem;
+}
+
+.detail-section h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.detail-section h2 i {
+    color: #1DB954;
+}
+
+/* Related Careers Section */
+.related-careers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.btn-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #1DB954;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.btn-link:hover {
+    color: #1DB954;
+}
+
+.btn-link i {
+    font-size: 0.9rem;
+}
+
+/* Salary Factors */
+.salary-factors {
+    margin-top: 2rem;
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.salary-factors h3 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.salary-factors ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.salary-factors li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #666;
+}
+
+.salary-factors li i {
+    color: #1DB954;
+}
+
+/* Market Trends */
+.market-trends {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.market-trends h3 {
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.market-trends ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.market-trends li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #666;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.market-trends li i {
+    color: #1DB954;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .hero-image {
+        height: 300px;
+    }
+
+    .hero-info h1 {
+        font-size: 2.5rem;
+    }
+
+    .quick-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .detail-hero {
+        padding: 2rem 1rem;
+    }
+
+    .hero-image {
+        height: 250px;
+    }
+
+    .hero-info h1 {
+        font-size: 2rem;
+    }
+
+    .overview {
+        font-size: 1.1rem;
+    }
+
+    .detail-content {
+        padding: 2rem 1rem;
+    }
+
+    .detail-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .quick-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .salary-factors ul,
+    .market-trends ul {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-info h1 {
+        font-size: 1.8rem;
+    }
+
+    .category-tag {
+        font-size: 0.8rem;
+    }
+
+    .overview {
+        font-size: 1rem;
+    }
+
+    .stat-card {
+        padding: 1.5rem;
+    }
+
+    .stat-card i {
+        font-size: 2rem;
+    }
+}
+
+/* CTA Button Styles */
+.cta-button {
+    display: inline-block;
+    background: #1DB954;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #1DB954;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Career Card Adjustments */
+.career-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.career-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.career-info .cta-button {
+    align-self: flex-start;
+    margin-top: auto;
+    margin-bottom: 1rem;
+}
+
+/* Profile Page Styles */
+.profile-main {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.profile-container {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.profile-header {
+    position: relative;
+}
+
+.profile-cover {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+}
+
+.profile-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.edit-cover-btn,
+.edit-avatar-btn {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.edit-cover-btn {
+    top: 20px;
+    right: 20px;
+}
+
+.edit-cover-btn:hover,
+.edit-avatar-btn:hover {
+    background: white;
+    transform: scale(1.1);
+}
+
+.profile-info {
+    padding: 2rem;
+    margin-top: -100px;
+    position: relative;
+    z-index: 1;
+}
+
+.profile-avatar {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 1rem;
+}
+
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 5px solid white;
+    object-fit: cover;
+}
+
+.edit-avatar-btn {
+    bottom: 10px;
+    right: 10px;
+}
+
+.profile-details h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.profile-title {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.profile-stats {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: block;
+}
+
+.stat-label {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.profile-content {
+    padding: 2rem;
+}
+
+.profile-section {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+}
+
+.profile-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.profile-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.about-content {
+    line-height: 1.6;
+    color: #444;
+}
+
+.interests-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.interest-tag {
+    background: #f0f0f0;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: #444;
+    transition: all 0.3s ease;
+}
+
+.interest-tag:hover {
+    background: #e0e0e0;
+    transform: translateY(-2px);
+}
+
+.activity-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.activity-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background: #f9f9f9;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.activity-item:hover {
+    background: #f0f0f0;
+    transform: translateX(5px);
+}
+
+.activity-item i {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.activity-content p {
+    margin-bottom: 0.3rem;
+}
+
+.activity-time {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.edit-btn {
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.edit-btn:hover {
+    background: #f0f0f0;
+    color: #333;
+}
+
+.edit-btn i {
+    margin-right: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .profile-main {
+        padding: 1rem;
+    }
+
+    .profile-cover {
+        height: 200px;
+    }
+
+    .profile-info {
+        margin-top: -50px;
+        padding: 1rem;
+    }
+
+    .profile-avatar {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profile-details h1 {
+        font-size: 1.5rem;
+    }
+
+    .profile-stats {
+        gap: 1rem;
+    }
+
+    .stat-value {
+        font-size: 1.2rem;
+    }
+
+    .profile-content {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-cover {
+        height: 150px;
+    }
+
+    .profile-avatar {
+        width: 80px;
+        height: 80px;
+    }
+
+    .profile-stats {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .activity-item {
+        padding: 0.8rem;
+    }
+}
+
+/* Profile Edit Styles */
+.about-edit,
+.interests-edit {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-family: inherit;
+    font-size: 1rem;
+    line-height: 1.5;
+    resize: vertical;
+}
+
+.about-edit {
+    min-height: 150px;
+}
+
+.interests-edit {
+    height: 50px;
+}
+
+.save-btn {
+    background: #1DB954;
+    color: white;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.save-btn:hover {
+    background: #1aa34a;
+    transform: translateY(-2px);
+}
+
+/* Loading States */
+.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.loading::after {
+    content: '';
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #1DB954;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-left: 0.5rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Error States */
+.error-message {
+    color: #dc3545;
+    background: #ffe6e6;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+/* Success States */
+.success-message {
+    color: #28a745;
+    background: #e6ffe6;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+/* File Upload Styles */
+input[type="file"] {
+    display: none;
+}
+
+.edit-cover-btn,
+.edit-avatar-btn {
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.profile-cover:hover .edit-cover-btn,
+.profile-avatar:hover .edit-avatar-btn {
+    opacity: 1;
+}
+
+/* Responsive Edit Styles */
+@media (max-width: 768px) {
+    .about-edit,
+    .interests-edit {
+        font-size: 0.9rem;
+    }
+
+    .save-btn {
+        width: 100%;
+        padding: 0.75rem;
+    }
+}
+
+/* Profile Icon Styles */
+.profile-icon {
+    margin-left: 20px;
+    position: relative;
+    list-style: none;
+}
+
+.profile-icon a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #f8f9fa;
+    color: #333;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    list-style: none;
+}
+
+.profile-icon a:hover {
+    background: #1DB954;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.profile-icon a i {
+    transition: transform 0.3s ease;
+}
+
+.profile-icon a:hover i {
+    transform: scale(1.1);
+}
+
+/* Mobile Profile Icon */
+.mobile-menu .profile-icon {
+    margin: 15px 0;
+    padding: 15px 0;
+    border-top: 1px solid #eee;
+}
+
+.mobile-menu .profile-icon a {
+    width: auto;
+    height: auto;
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    justify-content: flex-start;
+}
+
+.mobile-menu .profile-icon a:hover {
+    background: #f8f9fa;
+    color: #1DB954;
+    transform: translateX(5px);
+}
+
+.mobile-menu .profile-icon a span {
+    margin-left: 10px;
+    font-weight: 500;
+}
+
+/* Profile Icon Animation */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.profile-icon a.logged-in {
+    background: #1DB954;
+    color: white;
+    animation: pulse 2s infinite;
+}
+
+.profile-icon a.logged-in:hover {
+    animation: none;
+}
+
+/* Logout Button Styles */
+.logout-btn {
+    background-color: transparent;
+    color: #333;
+    border: 1px solid #333;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logout-btn:hover {
+    background-color: #1DB954;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logout-btn i {
+    font-size: 16px;
+}
+
+/* Profile Message Styles */
+.message-display {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-weight: 500;
+    z-index: 1000;
+    max-width: 350px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    animation: slideIn 0.3s ease-out;
+}
+
+.message-display.success {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border-left: 4px solid #2e7d32;
+}
+
+.message-display.error {
+    background-color: #ffebee;
+    color: #c62828;
+    border-left: 4px solid #c62828;
+}
+
+.message-display i {
+    font-size: 20px;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* Profile Update Success Animation */
+.profile-avatar.updated {
+    animation: successPulse 1s ease-in-out;
+}
+
+@keyframes successPulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(46, 125, 50, 0.4);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(46, 125, 50, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(46, 125, 50, 0);
+    }
+}
+
+/* Profile Section Styles */
+.profile-section {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.profile-section:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}

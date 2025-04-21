@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPORTify - Sport Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="sport-detail.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <img src="img/logo.png" alt="SPORTify">
+                <span>SPORTify</span>
+            </div>
+            <div class="nav-right">
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="sports.html">Sports</a>
+                    <a href="news.html">News</a>
+                    <a href="career.html">Career</a>
+                    <li class="profile-icon">
+                        <a href="login.html" id="profileLink">
+                            <i class="fas fa-user"></i>
+                        </a>
+                    </li>
+                </div>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="mobile-menu">
+            <div class="mobile-menu-content">
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="sports.html">Sports</a>
+                    <a href="news.html">News</a>
+                    <a href="career.html">Career</a>
+                    <li class="profile-icon">
+                        <a href="login.html" id="mobileProfileLink">
+                            <i class="fas fa-user"></i>
+                            <span>Login</span>
+                        </a>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sport Detail Content -->
+    <main class="sport-detail-container">
+        <div class="sport-header">
+            <div class="sport-banner">
+                <img id="sport-banner" src="" alt="Sport Banner">
+                <h1 id="sport-title"></h1>
+            </div>
+        </div>
+
+        <div class="sport-content">
+            <div class="sport-info-grid">
+                <!-- Overview Section -->
+                <section class="sport-section overview-section">
+                    <h2>Overview</h2>
+                    <p id="sport-description"></p>
+                    <div class="key-info">
+                        <div class="info-item">
+                            <i class="fas fa-users"></i>
+                            <span>Players per team: </span>
+                            <span id="players-count"></span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-globe"></i>
+                            <span>Origin: </span>
+                            <span id="sport-origin"></span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-trophy"></i>
+                            <span>Major Competition: </span>
+                            <span id="major-competition"></span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Rules Section -->
+                <section class="sport-section rules-section">
+                    <h2>Basic Rules</h2>
+                    <ul id="rules-list"></ul>
+                </section>
+            </div>
+
+            <!-- Famous Players Section -->
+            <section class="sport-section players-section">
+                <h2>Famous Players</h2>
+                <div class="players-grid" id="players-grid"></div>
+            </section>
+
+            <!-- Upcoming Events -->
+            <section class="sport-section events-section">
+                <h2>Upcoming Events</h2>
+                <div class="events-grid" id="events-grid"></div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About SPORTify</h3>
+                <p>Your ultimate destination for sports news, career information and sports detail</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="sports.html">Sports</a></li>
+                    <li><a href="career.html">Career</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Popular Sports</h3>
+                <ul>
+                    <li><a href="sport-detail.html?sport=cricket">Cricket</a></li>
+                    <li><a href="sport-detail.html?sport=football">Football</a></li>
+                    <li><a href="sport-detail.html?sport=basketball">Basketball</a></li>
+                    <li><a href="sport-detail.html?sport=tennis">Tennis</a></li>
+                    
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 SPORTify. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="session.js"></script>
+    <script src="sport-detail.js"></script>
+</body>
+</html> 

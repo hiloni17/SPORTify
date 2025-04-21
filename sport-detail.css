@@ -1,0 +1,218 @@
+.sport-detail-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.sport-header {
+    margin-bottom: 2rem;
+}
+
+.sport-banner {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-top: 2rem;
+}
+
+.sport-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sport-banner h1 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem;
+    color: white;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.sport-content {
+    margin-bottom: 4rem;
+}
+
+.sport-info-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.sport-section {
+    background: white;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.sport-section h2 {
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.key-info {
+    margin-top: 2rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.info-item i {
+    color: #0088cc;
+    font-size: 1.2rem;
+}
+
+.rules-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.rules-section li {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+    color: #666;
+}
+
+.rules-section li:last-child {
+    border-bottom: none;
+}
+
+.players-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.player-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.player-card:hover {
+    transform: translateY(-5px);
+}
+
+.player-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.player-info {
+    padding: 1rem;
+}
+
+.player-info h3 {
+    margin: 0;
+    color: #333;
+}
+
+.player-info p {
+    color: #666;
+    margin: 0.5rem 0 0;
+    font-size: 0.9rem;
+}
+
+.events-grid {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.event-card {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.event-date {
+    text-align: center;
+    min-width: 80px;
+}
+
+.event-date .day {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #0088cc;
+}
+
+.event-date .month {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.event-info h3 {
+    margin: 0;
+    color: #333;
+}
+
+.event-info p {
+    margin: 0.5rem 0 0;
+    color: #666;
+}
+
+@media (max-width: 968px) {
+    .sport-info-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .sport-banner {
+        height: 300px;
+    }
+
+    .sport-banner h1 {
+        font-size: 2rem;
+        padding: 1.5rem;
+    }
+
+    .players-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .event-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .event-date {
+        min-width: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .sport-banner {
+        height: 200px;
+    }
+
+    .sport-banner h1 {
+        font-size: 1.5rem;
+        padding: 1rem;
+    }
+
+    .sport-section {
+        padding: 1rem;
+    }
+} 

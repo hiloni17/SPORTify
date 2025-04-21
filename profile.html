@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPORTify</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <img src="img/logo.png" alt="Sports Career Hub Logo">
+                <span>SPORTify</span>
+            </div>
+            <div class="nav-right">
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="career.html">Careers</a>
+                    <a href="sports.html">Sports</a>
+                    <a href="news.html">News</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="profile-main">
+        <div class="profile-container">
+            <div class="profile-header">
+                <div class="profile-cover">
+                    <img src="img/default-cover.jpg" alt="Cover Photo" id="coverPhoto">
+                    <button class="edit-cover-btn" id="editCoverBtn"><i class="fas fa-camera"></i></button>
+                </div>
+                <div class="profile-info">
+                    <div class="profile-avatar">
+                        <img src="img/default-avatar.jpg" alt="Profile Picture" id="profilePicture">
+                        <button class="edit-avatar-btn" id="editAvatarBtn"><i class="fas fa-camera"></i></button>
+                    </div>
+                    <div class="profile-details">
+                        <h1 id="userName">Loading...</h1>
+                        <p class="profile-title" id="userTitle">Sports Enthusiast</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Message display for profile updates -->
+            <div id="profileMessage" class="message-display" style="display: none;"></div>
+
+            <div class="profile-content">
+                <div class="profile-section">
+                    <h2>About Me</h2>
+                    <div class="about-content" id="aboutContent">
+                        <p>Loading...</p>
+                    </div>
+                    <button class="edit-btn" id="editAboutBtn"><i class="fas fa-edit"></i> Edit</button>
+                </div>
+
+                <div class="profile-section">
+                    <h2>Interests</h2>
+                    <div class="interests-grid" id="interestsGrid">
+                        <!-- Interests will be populated dynamically -->
+                    </div>
+                    <button class="edit-btn" id="editInterestsBtn"><i class="fas fa-edit"></i> Edit</button>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About SPORTify</h3>
+                <p>Your ultimate destination for sports news, career information and sports detail</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sports.html">Sports</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="career.html">Career</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Popular Sports</h3>
+                <ul>
+                    <li><a href="sport-detail.html?sport=cricket">Cricket</a></li>
+                    <li><a href="sport-detail.html?sport=football">Football</a></li>
+                    <li><a href="sport-detail.html?sport=basketball">Basketball</a></li>
+                    <li><a href="sport-detail.html?sport=tennis">Tennis</a></li>
+                    
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 SPORTify. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- Firebase Scripts -->
+    <script type="module" src="firebaseauth.js"></script>
+    <script type="module" src="profile.js"></script>
+</body>
+</html> 
