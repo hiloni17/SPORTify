@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPORTify - Your Sports Destination</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <!-- Navigation -->
+        <nav>
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="img/logo.png" alt="SPORTify">
+                    <span>SPORTify</span>
+                </div>
+                <div class="nav-right">
+                    <div class="nav-links">
+                        <a href="index.html">Home</a>
+                        <a href="sports.html">Sports</a>
+                        <a href="career.html">Career</a>
+                        <li class="profile-icon">
+                            <a href="login.html" id="profileLink">
+                                <i class="fas fa-user"></i>
+                            </a>
+                        </li>
+                    </div>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="mobile-menu">
+                <div class="mobile-menu-content">
+                    <div class="nav-links">
+                        <a href="index.html">Home</a>
+                        <a href="sports.html">Sports</a>
+                        <a href="career.html">Career</a>
+                        <li class="profile-icon">
+                            <a href="login.html" id="mobileProfileLink">
+                                <i class="fas fa-user"></i>
+                                <span>Login</span>
+                            </a>
+                        </li>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Search Section -->
+    <main class="search-page">
+        <div class="search-hero">
+            <h1>Search News</h1>
+            <div class="main-search">
+                <input type="text" id="search-input" placeholder="Search for any sports related news...">
+                <button id="search-button" type="button"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+
+    <main class="main">
+        <!-- News Section -->
+        <div class="cards-container container flex" id="cards-container">
+            <!-- News Card
+                <div class="card">
+                <div class="card-header">
+                    <img src="https://via.placeholder.com/400x200" alt="News">
+                </div>
+                <div class="card-content">
+                    <h3 id="news-title">This is title of the news</h3>
+                    <h6 class="news-source" id="news-source">End Gadget 26/08/2025</h6>
+                    <p class="news-desc" id="news-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+                </div> 
+            -->
+        </div>
+    </main>
+
+    <template id="template-news-card">
+        <div class="card">
+            <div class="card-header">
+                <img id="news-img" src="https://via.placeholder.com/400x200" alt="News">
+            </div>
+            <div class="card-content">
+                <h3 id="news-title">This is title of the news</h3>
+                <h6 class="news-source" id="news-source">End Gadget 26/08/2025</h6>
+                <p class="news-desc" id="news-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+            </div>
+        </div>
+    </template>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About SPORTify</h3>
+                <p>Your ultimate destination for sports news, career information and sports detail</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sports.html">Sports</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="career.html">Career</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Popular Sports</h3>
+                <ul>
+                    <li><a href="sport-detail.html?sport=cricket">Cricket</a></li>
+                    <li><a href="sport-detail.html?sport=football">Football</a></li>
+                    <li><a href="sport-detail.html?sport=basketball">Basketball</a></li>
+                    <li><a href="sport-detail.html?sport=tennis">Tennis</a></li>
+                    
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 SPORTify. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="news.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
